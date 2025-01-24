@@ -86,6 +86,63 @@
     ]
   },
   {
+    "name": "CloudFactory",
+    "id": "CloudFactory",
+    "type": "CloudFactory",
+    "cat": "CSP",
+    "logo": "/assets/integrations/cloudFactory.png",
+    "logoDark": "/assets/integrations/cloudFactory_dark.png",
+    "description": "Enable the CloudFactory integration to manage your CSP licensing from CIPP.",
+    "helpText": "This integration allows you to manage your CSP licensing from CIPP. Purchase new licenses while adding or editing users in CIPP.",
+    "mappingRequired": true,
+    "links": [
+      {
+        "name": "Become a Partner",
+        "url": "https://cloudfactorygroup.com/get-in-touch/become-a-partner"
+      }
+    ],
+    "SettingOptions": [
+      {
+        "type": "switch",
+        "name": "CloudFactory.Enabled",
+        "label": "Enable Integration"
+      },
+      {
+        "type": "textField",
+        "name": "CloudFactory.clientId",
+        "label": "Client ID",
+        "placeholder": "Enter your CloudFactory Client ID",
+        "required": true
+      },
+      {
+        "type": "textField",
+        "name": "CloudFactory.SubscriptionKey",
+        "label": "Subscription Key",
+        "placeholder": "Enter your CloudFactory Subscription Key",
+        "required": true
+      },
+      {
+        "type": "password",
+        "name": "CloudFactory.APIKey",
+        "label": "Client Secret",
+        "placeholder": "Enter your CloudFactory Client Secret",
+        "required": true
+      },
+      {
+        "type": "autoComplete",
+        "name": "CloudFactory.AllowedCustomRoles",
+        "label": "Select custom roles that are allowed to purchase licenses",
+        "api": {
+          "url": "/api/ExecCustomRole",
+          "queryKey": "CustomRoles",
+          "labelField": "RowKey",
+          "valueField": "RowKey"
+        },
+        "multiple": true
+      }
+    ]
+  },
+  {
     "name": "Gradient",
     "id": "Gradient",
     "type": "Gradient",
