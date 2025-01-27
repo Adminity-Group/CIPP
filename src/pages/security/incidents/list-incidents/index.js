@@ -82,7 +82,7 @@ const Page = () => {
     <CippTablePage
       title={pageTitle}
       apiUrl="/api/ExecIncidentsList"
-      dataKey="Results"
+      apidataKey="Results"
       actions={actions}
       offCanvas={offCanvas}
       simpleColumns={simpleColumns}
