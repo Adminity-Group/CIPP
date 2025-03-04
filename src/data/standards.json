@@ -1638,6 +1638,14 @@
         "name": "standards.AntiPhishPolicy.SpoofQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -1677,6 +1685,14 @@
         "label": "Quarantine policy for user impersonation",
         "name": "standards.AntiPhishPolicy.TargetedUserQuarantineTag",
         "options": [
+          {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
           {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
@@ -1758,6 +1774,14 @@
         "name": "standards.AntiPhishPolicy.MailboxIntelligenceQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -1815,6 +1839,14 @@
         "label": "QuarantineTag",
         "name": "standards.SafeAttachmentPolicy.QuarantineTag",
         "options": [
+          {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
           {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
@@ -1902,6 +1934,14 @@
         "name": "standards.MalwareFilterPolicy.QuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -1985,6 +2025,14 @@
         "name": "standards.SpamFilterPolicy.SpamQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -2024,6 +2072,14 @@
         "label": "High Confidence Spam Quarantine Tag",
         "name": "standards.SpamFilterPolicy.HighConfidenceSpamQuarantineTag",
         "options": [
+          {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
           {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
@@ -2065,6 +2121,14 @@
         "name": "standards.SpamFilterPolicy.BulkQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -2105,6 +2169,14 @@
         "name": "standards.SpamFilterPolicy.PhishQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
           },
@@ -2126,6 +2198,14 @@
         "label": "High Confidence Phish Quarantine Tag",
         "name": "standards.SpamFilterPolicy.HighConfidencePhishQuarantineTag",
         "options": [
+          {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
           {
             "label": "AdminOnlyAccessPolicy",
             "value": "AdminOnlyAccessPolicy"
