@@ -1734,6 +1734,14 @@
         "name": "standards.AntiPhishPolicy.TargetedDomainQuarantineTag",
         "options": [
           {
+            "label": "Ng: Notify.FullPermission",
+            "value": "Ng: Notify.FullPermission"
+          },
+          {
+            "label": "Ng: Notify.RequestRelease",
+            "value": "Ng: Notify.RequestRelease"
+          },
+          {
             "label": "DefaultFullAccessWithNotificationPolicy",
             "value": "DefaultFullAccessWithNotificationPolicy"
           },
