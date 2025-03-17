@@ -2027,13 +2027,13 @@
     "addedComponent": [
       {
         "type": "textField",
-        "name": "Name",
+        "name": "standards.QuarantinePolicy.Name",
         "label": "Quarantine Display Name"
       },
       {
         "type": "switch",
         "label": "Enable end-user spam notifications",
-        "name": "ESNEnabled",
+        "name": "standards.QuarantinePolicy.ESNEnabled",
         "defaultValue": true,
         "required": false
       },
@@ -2041,7 +2041,7 @@
         "type": "select",
         "multiple": false,
         "label": "Select release action preference",
-        "name": "ReleaseAction",
+        "name": "standards.QuarantinePolicy.ReleaseAction",
         "options": [
           {
             "label": "Allow recipients to request a message to be released from quarantine",
@@ -2056,35 +2056,35 @@
       {
         "type": "switch",
         "label": "Include Messages From Blocked Sender Address",
-        "name": "IncludeMessagesFromBlockedSenderAddress",
+        "name": "standards.QuarantinePolicy.IncludeMessagesFromBlockedSenderAddress",
         "defaultValue": false,
         "required": false
       },
       {
         "type": "switch",
         "label": "Allow recipients to delete message",
-        "name": "PermissionToDelete",
+        "name": "standards.QuarantinePolicy.PermissionToDelete",
         "defaultValue": false,
         "required": false
       },
       {
         "type": "switch",
         "label": "Allow recipients to preview message",
-        "name": "PermissionToPreview",
+        "name": "standards.QuarantinePolicy.PermissionToPreview",
         "defaultValue": false,
         "required": false
       },
       {
         "type": "switch",
         "label": "Allow recipients to block Sender Address",
-        "name": "PermissionToBlockSender",
+        "name": "standards.QuarantinePolicy.PermissionToBlockSender",
         "defaultValue": false,
         "required": false
       },
       {
         "type": "switch",
         "label": "Allow recipients to whitelist Sender Address",
-        "name": "PermissionToAllowSender",
+        "name": "standards.QuarantinePolicy.PermissionToAllowSender",
         "defaultValue": false,
         "required": false
       }
