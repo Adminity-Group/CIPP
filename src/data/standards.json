@@ -2038,6 +2038,22 @@
         "required": false
       },
       {
+        "type": "select",
+        "multiple": false,
+        "label": "Select release action preference",
+        "name": "standards.QuarantinePolicy.ReleaseAction",
+        "options": [
+          {
+            "label": "Allow recipients to request a message to be released from quarantine",
+            "value": "PermissionToRequestRelease"
+          },
+          {
+            "label": "Allow recipients to release a message from quarantine",
+            "value": "PermissionToRelease"
+          }
+        ]
+      },
+      {
         "type": "switch",
         "label": "Include Messages From Blocked Sender Address",
         "name": "standards.QuarantinePolicy.IncludeMessagesFromBlockedSenderAddress",
@@ -2045,9 +2061,32 @@
         "required": false
       },
       {
-        "type": "number",
-        "name": "standards.QuarantinePolicy.EndUserQuarantinePermissionsValue",
-        "label": "Quarantine Permissions Decimal value"
+        "type": "switch",
+        "label": "Allow recipients to delete message",
+        "name": "standards.QuarantinePolicy.PermissionToDelete",
+        "defaultValue": false,
+        "required": false
+      },
+      {
+        "type": "switch",
+        "label": "Allow recipients to preview message",
+        "name": "standards.QuarantinePolicy.PermissionToPreview",
+        "defaultValue": false,
+        "required": false
+      },
+      {
+        "type": "switch",
+        "label": "Allow recipients to block Sender Address",
+        "name": "standards.QuarantinePolicy.PermissionToBlockSender",
+        "defaultValue": false,
+        "required": false
+      },
+      {
+        "type": "switch",
+        "label": "Allow recipients to whitelist Sender Address",
+        "name": "standards.QuarantinePolicy.PermissionToAllowSender",
+        "defaultValue": false,
+        "required": false
       }
     ],
     "label": "Custom Quarantine policy",
