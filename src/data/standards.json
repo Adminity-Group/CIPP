@@ -2015,7 +2015,7 @@
     "recommendedBy": ["CIS"]
   },
   {
-    "name": "standards.QuarantinePolicy",
+    "name": "standards.QuarantineTemplate",
     "cat": "Defender Standards",
     "disabledFeatures": {
       "report": true,
