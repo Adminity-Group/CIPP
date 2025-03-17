@@ -2023,7 +2023,7 @@
       "remediate": false
     },
     "tag": ["mdo_safedocuments", "mdo_commonattachmentsfilter", "mdo_safeattachmentpolicy"],
-    "helpText": "This creates a Custom Quarantine policy",
+    "helpText": "This creates a Custom Quarantine policy, read microsoft learn to calculate permission value https://learn.microsoft.com/en-us/defender-office-365/quarantine-policies#create-quarantine-policies-in-powershell",
     "addedComponent": [
       {
         "type": "textField",
@@ -2031,9 +2031,23 @@
         "label": "Quarantine Display Name"
       },
       {
+        "type": "switch",
+        "label": "Enable end-user spam notifications",
+        "name": "standards.QuarantinePolicy.ESNEnabled",
+        "defaultValue": true,
+        "required": false
+      },
+      {
+        "type": "switch",
+        "label": "Include Messages From Blocked Sender Address",
+        "name": "standards.QuarantinePolicy.IncludeMessagesFromBlockedSenderAddress",
+        "defaultValue": false,
+        "required": false
+      },
+      {
         "type": "number",
         "name": "standards.QuarantinePolicy.EndUserQuarantinePermissionsValue",
-        "label": "Quarantine Permissions Decimal value, https://learn.microsoft.com/en-us/defender-office-365/quarantine-policies#create-quarantine-policies-in-powershell"
+        "label": "Quarantine Permissions Decimal value"
       }
     ],
     "label": "Custom Quarantine policy",
