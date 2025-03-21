@@ -86,6 +86,7 @@ const Page = () => {
     extendedInfoFields: [
       "displayName",
       "defaultDomainName",
+      "shortName",
       "Excluded",
       "ExcludeDate",
       "ExcludeUser",
@@ -97,6 +98,7 @@ const Page = () => {
   const columns = [
     "displayName", // Tenant Name
     "defaultDomainName", // Default Domain
+    "shortName", // Short Name
     "Excluded", // Excluded Status
     "ExcludeDate", // Exclude Date
     "ExcludeUser", // Exclude User
