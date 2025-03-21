@@ -14,17 +14,17 @@ const Page = () => {
   // Actions formatted as per your guidelines
   const actions = [
     {
-      label: "Set customer shortname",
+      label: "Set Tenant shortname",
       type: "POST",
-      url: `/api/ExecExcludeTenant?AddExclusion=true`,
+      url: `/api/ExecSetTenantShortName`,
       icon: <EditNote />,
       data: { value: "customerId" },
-      confirmText: "Are you sure you typed the correct customer shortname?",
+      confirmText: "Are you sure you typed the correct Tenant shortname?",
       fields: [
         {
           type: "textField",
           name: "shortName",
-          label: "Type Shortname",
+          label: "shortName",
         },
       ],
       multiPost: false,
