@@ -5,7 +5,7 @@ import tabOptions from "./tabOptions";
 import { Button, SvgIcon } from "@mui/material";
 import { CippApiDialog } from "/src/components/CippComponents/CippApiDialog";
 import { useDialog } from "/src/hooks/use-dialog";
-import { Sync, Block, PlayArrow, RestartAlt, Delete, Add } from "@mui/icons-material";
+import { Sync, Block, PlayArrow, RestartAlt, Delete, Add, EditNote } from "@mui/icons-material";
 
 const Page = () => {
   const pageTitle = "Tenants - Backend";
@@ -13,6 +13,22 @@ const Page = () => {
 
   // Actions formatted as per your guidelines
   const actions = [
+    {
+      label: "Set customer shortname",
+      type: "POST",
+      url: `/api/ExecExcludeTenant?AddExclusion=true`,
+      icon: <EditNote />,
+      data: { value: "customerId" },
+      confirmText: "Are you sure you typed the correct customer shortname?",
+      fields: [
+        {
+          type: "textField",
+          name: "shortName",
+          label: "Type Shortname",
+        },
+      ],
+      multiPost: false,
+    },
     {
       label: "Exclude Tenants",
       type: "POST",
