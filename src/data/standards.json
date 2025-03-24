@@ -3744,6 +3744,7 @@
         "type": "radio",
         "options": [
           { "value": "donotchange", "label": "Do not change state" },
+          { "value": "NoOverwrite", "label": "Do not owerwrite tenant assignment" },
           { "value": "Enabled", "label": "Set to enabled" },
           { "value": "Disabled", "label": "Set to disabled" },
           { "value": "enabledForReportingButNotEnforced", "label": "Set to report only" }
