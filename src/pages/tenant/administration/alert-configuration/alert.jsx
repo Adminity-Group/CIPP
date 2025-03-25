@@ -92,12 +92,6 @@ const AlertWizard = () => {
           "recurrence",
           recurrenceOptions?.find((opt) => opt.value === alert.RawAlert.Recurrence)
         );
-        
-        formControl.setValue(
-          "Parameters",
-          recurrenceOptions?.find((opt) => opt.value === alert.RawAlert.Parameters)
-        );
-        
         const postExecutionValue = postExecutionOptions.filter((opt) =>
           alert.RawAlert.PostExecution.split(",").includes(opt.value)
         );

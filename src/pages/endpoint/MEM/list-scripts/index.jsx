@@ -150,6 +150,18 @@ const Page = () => {
 
   const actions = [
     {
+      label: "Add script to template library",
+      type: "POST",
+      url: "/api/AddScriptTemplate",
+      data: {
+        ID: "id",
+        URLName: "URLName",
+      },
+      confirmText: "Are you sure you want to add this script to the template library?",
+      icon: <Book />,
+      color: "info",
+    },
+    {
       label: "Edit Script",
       icon: <PencilIcon />,
       color: "primary",
