@@ -2,6 +2,7 @@
   {
     "name": "MFAAlertUsers",
     "label": "Alert on users without any form of MFA",
+    "requiresInput": true,
     "inputType": "switch",
     "inputLabel": "Exclude disabled Users?",
     "inputName": "ExcludeDisabled",
@@ -10,6 +11,7 @@
   {
     "name": "MFAAdmins",
     "label": "Alert on admins without any form of MFA",
+    "requiresInput": true,
     "inputType": "switch",
     "inputLabel": "Exclude disabled Admins?",
     "inputName": "ExcludeDisabled",
