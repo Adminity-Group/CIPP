@@ -2,11 +2,17 @@
   {
     "name": "MFAAlertUsers",
     "label": "Alert on users without any form of MFA",
+    "inputType": "switch",
+    "inputLabel": "Exclude disabled Users?",
+    "inputName": "ExcludeDisabled",
     "recommendedRunInterval": "1d"
   },
   {
     "name": "MFAAdmins",
     "label": "Alert on admins without any form of MFA",
+    "inputType": "switch",
+    "inputLabel": "Exclude disabled Admins?",
+    "inputName": "ExcludeDisabled",
     "recommendedRunInterval": "1d"
   },
   {
