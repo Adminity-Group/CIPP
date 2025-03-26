@@ -10,7 +10,7 @@ import { CippFormCondition } from "../CippComponents/CippFormCondition";
 export const CippScriptForm = (props) => {
   const { formControl, onPreviousStep, onNextStep, currentStep } = props;
   const values = formControl.getValues();
-  const CATemplates = ApiGetCall({ url: "/api/ListScriptTemplates" });
+  const CATemplates = ApiGetCall({ url: "/api/ListScriptTemplates", queryKey: "ScriptTemplates" });
   const [JSONData, setJSONData] = useState();
   const watcher = useWatch({ control: formControl.control, name: "TemplateList" });
   useEffect(() => {
