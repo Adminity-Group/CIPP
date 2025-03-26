@@ -10,12 +10,12 @@ import { useWatch } from "react-hook-form";
 export const CippScriptForm = (props) => {
   const { formControl, onPreviousStep, onNextStep, currentStep } = props;
   const values = formControl.getValues();
-  const ScriptTemplates = ApiGetCall({ url: "/api/ListScriptTemplates" });
+  const CATemplates = ApiGetCall({ url: "/api/ListScriptTemplates" });
   const [JSONData, setJSONData] = useState();
   const watcher = useWatch({ control: formControl.control, name: "TemplateList" });
   useEffect(() => {
-    if (ScriptTemplates.isSuccess && watcher?.value) {
-      const template = ScriptTemplates.data.find((template) => template.GUID === watcher.value);
+    if (CATemplates.isSuccess && watcher?.value) {
+      const template = CATemplates.data.find((template) => template.GUID === watcher.value);
       if (template) {
         const jsonTemplate = template.RAWJson ? JSON.parse(template.RAWJson) : null;
         setJSONData(jsonTemplate);
@@ -29,7 +29,7 @@ export const CippScriptForm = (props) => {
         formControl.setValue("runAsAccount", template.runAsAccount);
       }
     }
-  }, [ScriptTemplates, watcher]);
+  }, [CATemplates, watcher]);
 
   return (
     <Stack spacing={3}>
@@ -38,12 +38,12 @@ export const CippScriptForm = (props) => {
           type="autoComplete"
           name="TemplateList"
           label="Please choose a Script to apply."
-          isFetching={ScriptTemplates.isLoading}
+          isFetching={CATemplates.isLoading}
           multiple={false}
           formControl={formControl}
           options={
-            ScriptTemplates.isSuccess
-              ? ScriptTemplates.data.map((template) => ({
+            CATemplates.isSuccess
+              ? CATemplates.data.map((template) => ({
                   label: template.displayName,
                   value: template.GUID,
                 }))
