@@ -3723,8 +3723,8 @@
     "label": "Intune Script Template",
     "multiple": true,
     "disabledFeatures": {
-      "report": false,
-      "warn": false,
+      "report": true,
+      "warn": true,
       "remediate": false
     },
     "impact": "High Impact",
