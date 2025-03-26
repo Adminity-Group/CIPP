@@ -65,7 +65,7 @@ export const CippScriptForm = (props) => {
             type="radio"
             name="AssignTo"
             options={[
-              { label: "Do not assign", value: "doNotAssign" },
+              { label: "Do not assign", value: "On" },
               { label: "Assign to all users", value: "allLicensedUsers" },
               { label: "Assign to all devices", value: "AllDevices" },
               { label: "Assign to all users and devices", value: "AllDevicesAndUsers" },
