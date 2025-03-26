@@ -2,7 +2,7 @@ import { Layout as DashboardLayout } from "/src/layouts/index.js";
 import { CippWizardConfirmation } from "/src/components/CippWizard/CippWizardConfirmation";
 import CippWizardPage from "/src/components/CippWizard/CippWizardPage.jsx";
 import { CippTenantStep } from "../../../../components/CippWizard/CippTenantStep";
-import { CippCAForm } from "../../../../components/CippWizard/CippCAForm";
+import { CippScriptForm } from "../../../../components/CippWizard/CippScriptForm";
 
 const Page = () => {
   const steps = [
@@ -15,7 +15,7 @@ const Page = () => {
     {
       title: "Step 2",
       description: "Script Configuration",
-      component: CippCAForm,
+      component: CippScriptForm,
     },
     {
       title: "Step 3",
