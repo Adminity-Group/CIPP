@@ -21,12 +21,12 @@ export const CippScriptForm = (props) => {
         setJSONData(jsonTemplate);
         formControl.setValue("RAWJson", template.RAWJson);
         formControl.setValue("displayName", template.Displayname);
-        formControl.setValue("fileName", template.fileName);
+        //formControl.setValue("fileName", template.fileName);
         formControl.setValue("description", template.Description);
         formControl.setValue("ScriptType", template.Type);
-        formControl.setValue("enforceSignatureCheck", template.enforceSignatureCheck);
-        formControl.setValue("runAs32Bit", template.runAs32Bit);
-        formControl.setValue("runAsAccount", template.runAsAccount);
+        //formControl.setValue("enforceSignatureCheck", template.enforceSignatureCheck);
+        //formControl.setValue("runAs32Bit", template.runAs32Bit);
+        //formControl.setValue("runAsAccount", template.runAsAccount);
       }
     }
   }, [ watcher]);
