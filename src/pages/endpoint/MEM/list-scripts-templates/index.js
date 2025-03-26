@@ -6,7 +6,7 @@ import CippJsonView from "../../../../components/CippFormPages/CippJSONView";
 import { ApiGetCall } from "/src/api/ApiCall";
 
 const Page = () => {
-  const pageTitle = "Available Endpoint Manager Templates";
+  const pageTitle = "Available Intune Script Templates";
   const integrations = ApiGetCall({
     url: "/api/ListExtensionsConfig",
     queryKey: "Integrations",
