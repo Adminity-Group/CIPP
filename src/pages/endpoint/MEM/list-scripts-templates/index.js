@@ -106,6 +106,15 @@ const Page = () => {
   };
 
   const simpleColumns = ["displayName","fileName", "description", "Type"];
+  
+  // const simpleColumns = [
+  //   "scriptType",
+  //   "displayName",
+  //   "description",
+  //   "runAsAccount",
+  //   "lastModifiedDateTime",
+  // ];
+
 
   return (
     <CippTablePage
