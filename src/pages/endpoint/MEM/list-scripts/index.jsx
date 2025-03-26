@@ -10,6 +10,7 @@ import {
   IconButton,
   CircularProgress,
   DialogActions,
+  AddModerator as AddModeratorIcon,
 } from "@mui/material";
 import { CippCodeBlock } from "/src/components/CippComponents/CippCodeBlock";
 import { useState, useEffect } from "react";
