@@ -29,7 +29,7 @@ export const CippScriptForm = (props) => {
         formControl.setValue("runAsAccount", template.runAsAccount);
       }
     }
-  }, [CATemplates, watcher]);
+  }, [ watcher]);
 
   return (
     <Stack spacing={3}>
