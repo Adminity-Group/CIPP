@@ -217,7 +217,7 @@ const Page = () => {
           <>
             <Button
               component={Link}
-              href="/tenant/MEM/list-scripts/deploy"
+              href="/endpoint/MEM/list-scripts/deploy"
               startIcon={<AddModeratorIcon />}
             >
               Deploy script
