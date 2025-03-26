@@ -19,6 +19,7 @@ import { useSettings } from "../../../../hooks/use-settings";
 import { Stack } from "@mui/system";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
+import Link from "next/link";
 
 const Page = () => {
   const pageTitle = "Scripts";
