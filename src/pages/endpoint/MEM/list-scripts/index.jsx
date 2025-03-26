@@ -212,6 +212,17 @@ const Page = () => {
   return (
     <>
       <CippTablePage
+        cardButton={
+          <>
+            <Button
+              component={Link}
+              href="/tenant/conditional/list-scripts/deploy"
+              startIcon={<AddModeratorIcon />}
+            >
+              Deploy script
+            </Button>
+          </>
+        }
         title={pageTitle}
         apiUrl="/api/ListIntuneScript"
         actions={actions}
