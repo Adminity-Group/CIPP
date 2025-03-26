@@ -155,7 +155,8 @@ const Page = () => {
       url: "/api/AddScriptTemplate",
       data: {
         ID: "id",
-        URLName: "URLName",
+        displayName: "displayName",
+        scriptType: "scriptType",
       },
       confirmText: "Are you sure you want to add this script to the template library?",
       icon: <Book />,
