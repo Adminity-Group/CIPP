@@ -37,13 +37,13 @@ const Page = () => {
       icon: <PencilIcon />,
       color: "info",
     },
-    {
-      label: "Edit Script",
-      icon: <PencilIcon />,
-      color: "primary",
-      noConfirm: true,
-      customFunction: handleScriptEdit,
-    },
+    // {
+    //   label: "Edit Script",
+    //   icon: <PencilIcon />,
+    //   color: "primary",
+    //   noConfirm: true,
+    //   customFunction: handleScriptEdit,
+    // },
     {
       label: "Save to GitHub",
       type: "POST",

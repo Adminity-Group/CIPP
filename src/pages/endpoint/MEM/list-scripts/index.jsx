@@ -216,7 +216,7 @@ const Page = () => {
           <>
             <Button
               component={Link}
-              href="/tenant/conditional/list-scripts/deploy"
+              href="/tenant/MEM/list-scripts/deploy"
               startIcon={<AddModeratorIcon />}
             >
               Deploy script
