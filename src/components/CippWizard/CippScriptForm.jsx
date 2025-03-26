@@ -44,7 +44,7 @@ export const CippScriptForm = (props) => {
           options={
             CATemplates.isSuccess
               ? CATemplates.data.map((template) => ({
-                  label: template.displayName,
+                  label: template.Displayname,
                   value: template.GUID,
                 }))
               : []
