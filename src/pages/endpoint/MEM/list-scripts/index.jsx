@@ -1,4 +1,4 @@
-PencilIconimport { Layout as DashboardLayout } from "/src/layouts/index";
+import { Layout as DashboardLayout } from "/src/layouts/index";
 import { CippTablePage } from "/src/components/CippComponents/CippTablePage";
 import { Code, TrashIcon, PencilIcon } from "@heroicons/react/24/outline";
 import { showToast } from "/src/store/toasts";
