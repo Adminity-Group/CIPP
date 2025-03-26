@@ -10,12 +10,11 @@ import {
   IconButton,
   CircularProgress,
   DialogActions,
-  Book,
 } from "@mui/material";
 import { CippCodeBlock } from "/src/components/CippComponents/CippCodeBlock";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Search, Close, Save } from "@mui/icons-material";
+import { Search, Close, Save, Book } from "@mui/icons-material";
 import { useSettings } from "../../../../hooks/use-settings";
 import { Stack } from "@mui/system";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
