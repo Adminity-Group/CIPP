@@ -15,7 +15,7 @@ const Page = () => {
   });
   const actions = [
     {
-      label: "Edit Template Name and Description",
+      label: "Edit Script Name and Description",
       type: "POST",
       url: "/api/ExecEditTemplate",
       fields: [
@@ -36,6 +36,13 @@ const Page = () => {
       multiPost: false,
       icon: <PencilIcon />,
       color: "info",
+    },
+    {
+      label: "Edit Script",
+      icon: <PencilIcon />,
+      color: "primary",
+      noConfirm: true,
+      customFunction: handleScriptEdit,
     },
     {
       label: "Save to GitHub",
@@ -98,7 +105,7 @@ const Page = () => {
     size: "lg",
   };
 
-  const simpleColumns = ["displayName", "description", "Type"];
+  const simpleColumns = ["displayName","fileName", "description", "Type"];
 
   return (
     <CippTablePage
