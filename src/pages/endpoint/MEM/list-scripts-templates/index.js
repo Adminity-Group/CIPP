@@ -105,15 +105,16 @@ const Page = () => {
     size: "lg",
   };
 
-  const simpleColumns = ["displayName","fileName", "description", "Type"];
+  // const simpleColumns = ["displayName","fileName", "description", "Type"];
   
-  // const simpleColumns = [
-  //   "scriptType",
-  //   "displayName",
-  //   "description",
-  //   "runAsAccount",
-  //   "lastModifiedDateTime",
-  // ];
+  const simpleColumns = [
+    "scriptType",
+    "displayName",
+    "fileName",
+    "description",
+    "runAsAccount",
+    "lastModifiedDateTime",
+  ];
 
 
   return (

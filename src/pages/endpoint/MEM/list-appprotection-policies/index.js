@@ -1,7 +1,9 @@
 import { Layout as DashboardLayout } from "/src/layouts/index.js";
 import { CippTablePage } from "/src/components/CippComponents/CippTablePage.jsx";
-import { Book } from "@mui/icons-material";
+import { Book, AddModerator as AddModeratorIcon } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import { TrashIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const Page = () => {
   const pageTitle = "App Protection & Configuration Policies";
@@ -47,6 +49,17 @@ const Page = () => {
 
   return (
     <CippTablePage
+      cardButton={
+        <>
+          <Button
+            component={Link}
+            href="/endpoint/MEM/add-policy"
+            startIcon={<AddModeratorIcon />}
+          >
+            Deploy Intune Policy
+          </Button>
+        </>
+      }
       title={pageTitle}
       apiUrl="/api/ListGraphRequest"
       apiData={{

@@ -205,6 +205,7 @@ const Page = () => {
   const simpleColumns = [
     "scriptType",
     "displayName",
+    "fileName",
     "description",
     "runAsAccount",
     "lastModifiedDateTime",
