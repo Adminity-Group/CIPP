@@ -610,7 +610,6 @@
         "name": "standards.NudgeMFA.excludeGroup",
         "label": "Exclude Groups",
         "type": "textField",
-        "required": false,
         "helpText": "Enter the group name to exclude from the assignment."
       }
     ],
