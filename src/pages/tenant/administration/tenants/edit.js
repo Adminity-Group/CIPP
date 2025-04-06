@@ -37,6 +37,7 @@ const Page = () => {
       formControl.reset({
         customerId: id,
         Alias: tenantDetails?.data?.customProperties?.Alias ?? "",
+        Shortname: tenantDetails?.data?.customProperties?.Shortname ?? "",
         Groups:
           tenantDetails.data.Groups?.map((group) => ({
             label: group.Name,
