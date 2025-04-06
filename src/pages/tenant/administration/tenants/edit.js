@@ -100,6 +100,7 @@ const Page = () => {
                 customDataformatter={(values) => {
                   const formattedValues = {
                     tenantAlias: values.Alias,
+                    tenantShortname: values.Shortname,
                     tenantGroups: values.Groups.map((group) => ({
                       groupId: group.value,
                       groupName: group.label,
@@ -116,6 +117,15 @@ const Page = () => {
                     name="Alias"
                     label="Tenant Alias"
                     placeholder="Enter a custom alias for this tenant to be displayed in CIPP."
+                    formControl={formControl}
+                    isFetching={tenantDetails.isFetching}
+                    disabled={tenantDetails.isFetching}
+                  />
+                  <CippFormComponent
+                    type="textField"
+                    name="Shortname"
+                    label="Tenant Shortname"
+                    placeholder="Enter shortname for this tenant to be used in autopilot."
                     formControl={formControl}
                     isFetching={tenantDetails.isFetching}
                     disabled={tenantDetails.isFetching}

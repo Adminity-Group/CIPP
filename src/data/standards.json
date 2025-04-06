@@ -3788,7 +3788,7 @@
       "warn": true,
       "remediate": false
     },
-    "impact": "High Impact",
+    "impact": "Low Impact",
     "addedDate": "2025-03-29",
     "helpText": "Deploy WinGet Applications.",
     "addedComponent": [
