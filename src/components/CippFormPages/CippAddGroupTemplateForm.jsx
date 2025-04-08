@@ -50,7 +50,7 @@ const CippAddGroupTemplateForm = (props) => {
             { label: "Dynamic Group", value: "dynamic" },
             { label: "Dynamic Distribution Group", value: "dynamicdistribution" },
             { label: "Distribution List", value: "distribution" },
-            { label: "Mail Enabled Security Group", value: "security" },
+            { label: "Mail Enabled Security Group", value: "mailEnabledSecurity" },
           ]}
         />
       </Grid>
