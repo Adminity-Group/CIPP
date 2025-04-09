@@ -106,7 +106,11 @@ function CippJsonView({
       });
     } else if (data.settings) {
       data.settings.forEach((setting, index) => {
-        const settingInstance = setting.settingInstance;
+        const settingInstance = setting?.settingInstance;
+        if (!settingInstance) {
+          
+          return; // Skip further processing for this setting
+        }
         const intuneObj = intuneCollection.find(
           (item) => item.id === settingInstance.settingDefinitionId
         );
