@@ -878,7 +878,7 @@
     "recommendedBy": ["CIPP"]
   },
   {
-    "name": "standards.AuthSMS",
+    "name": "standards.AuthMethodSMS",
     "cat": "Entra (AAD) Standards",
     "tag": [],
     "helpText": "Sets the state of authentication method SMS.",
@@ -889,7 +889,7 @@
         "multiple": false,
         "creatable": false,
         "label": "Select value",
-        "name": "standards.AuthSMS.state",
+        "name": "standards.AuthMethodSMS.state",
         "options": [
           {
             "label": "Enabled",
@@ -904,18 +904,18 @@
       {
         "type": "switch",
         "label": "Use for sign-in",
-        "name": "AllowSignIn",
+        "name": "standards.AuthMethodSMS.isUsableForSignIn",
         "defaultValue": false,
         "required": false
       },
       {
-        "name": "standards.AuthSMS.selectedGroup",
+        "name": "standards.AuthMethodSMS.selectedGroup",
         "label": "Selected Groups",
         "type": "textField",
         "helpText": "Enter the group name of selected group."
       },
       {
-        "name": "standards.AuthSMS.excludeGroup",
+        "name": "standards.AuthMethodSMS.excludeGroup",
         "label": "Exclude Groups",
         "type": "textField",
         "helpText": "Enter the group name to exclude from the assignment."
