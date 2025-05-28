@@ -19,6 +19,22 @@ export const CippTenantTable = ({
 
   // Actions formatted as per your guidelines
   const actions = [
+      {
+      label: "Set Tenant shortname",
+      type: "POST",
+      url: `/api/ExecSetTenantShortName`,
+      icon: <EditNote />,
+      data: { value: "customerId" },
+      confirmText: "Are you sure you typed the correct Tenant shortname?",
+      fields: [
+        {
+          type: "textField",
+          name: "shortName",
+          label: "shortName",
+        },
+      ],
+      multiPost: false,
+    },
     {
       label: "Exclude Tenants",
       type: "POST",
@@ -78,6 +94,7 @@ export const CippTenantTable = ({
     extendedInfoFields: [
       "displayName",
       "defaultDomainName",
+      "shortName",
       "delegatedPrivilegeStatus",
       "Excluded",
       "ExcludeDate",
@@ -90,6 +107,7 @@ export const CippTenantTable = ({
   const columns = customColumns || [
     "displayName", // Tenant Name
     "defaultDomainName", // Default Domain
+    "shortName", // Short Name
     "delegatedPrivilegeStatus", // Delegated Privilege Status
     "Excluded", // Excluded Status
     "ExcludeDate", // Exclude Date
