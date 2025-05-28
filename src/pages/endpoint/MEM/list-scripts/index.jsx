@@ -18,7 +18,7 @@ import { Search, Close, Save, Book, AddModerator as AddModeratorIcon } from "@mu
 import { useSettings } from "../../../../hooks/use-settings";
 import { Stack } from "@mui/system";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+
 import Link from "next/link";
 
 const Page = () => {
@@ -95,17 +95,19 @@ const Page = () => {
         scriptContent,
         runAsAccount,
         fileName,
-        roleScopeTagIds
+        roleScopeTagIds,
+        scriptType,
       } = currentScript;
       const patchData = {
         TenantFilter: tenantFilter,
         ScriptId: id,
+        ScriptType: scriptType,
         IntuneScript: JSON.stringify({
           runAs32Bit,
           id,
           displayName,
           description,
-          scriptContent: scriptBytes.toString("base64"),  // Convert to base64
+          scriptContent: scriptBytes.toString("base64"), // Convert to base64
           runAsAccount,
           fileName,
           roleScopeTagIds,
@@ -119,7 +121,7 @@ const Page = () => {
       });
 
       if (!response.ok) {
-        dispatch (
+        dispatch(
           showToast({
             title: "Script Save Error",
             message: "Your Intune script could not be saved.",
@@ -127,7 +129,7 @@ const Page = () => {
           })
         );
       }
-      
+
       return response.json();
     },
     enabled: false,
@@ -140,7 +142,7 @@ const Page = () => {
     const { data } = await saveScriptRefetch();
     setCodeContentChanged(false);
     setCodeOpen(!codeOpen);
-    dispatch (
+    dispatch(
       showToast({
         title: "Script Saved",
         message: "Your Intune script has been saved successfully.",
@@ -254,15 +256,12 @@ const Page = () => {
             </IconButton>
           )}
           {isSaving && (
-            <CircularProgress
-              size={20}
-              sx={{ position: "absolute", right: 55, top: 14 }}
-            />
+            <CircularProgress size={20} sx={{ position: "absolute", right: 55, top: 14 }} />
           )}
         </DialogTitle>
         <DialogContent dividers>
           {(scriptIsFetching || scriptIsLoading) && <CircularProgress size={40} />}
-          {(!scriptIsFetching && !scriptIsLoading) && (
+          {!scriptIsFetching && !scriptIsLoading && (
             <CippCodeBlock
               open={codeOpen}
               type="editor"
