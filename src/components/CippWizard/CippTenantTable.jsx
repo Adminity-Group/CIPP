@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, SvgIcon } from "@mui/material";
 import { CippTablePage } from "../CippComponents/CippTablePage.jsx";
-import { Sync, Block, PlayArrow, RestartAlt, Delete, Add } from "@mui/icons-material";
+import { Sync, Block, PlayArrow, RestartAlt, Delete, Add, EditNote } from "@mui/icons-material";
 import { useDialog } from "../../hooks/use-dialog";
 import { CippApiDialog } from "../CippComponents/CippApiDialog";
 
