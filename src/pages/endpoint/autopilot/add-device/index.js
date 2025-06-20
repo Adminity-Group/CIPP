@@ -24,15 +24,34 @@ const Page = () => {
       component: CippWizardCSVImport,
       componentProps: {
         name: "autopilotData",
-        manualFields: true,
-        fields: ["SerialNumber", "oemManufacturerName", "modelName", "productKey", "hardwareHash"],
-        nameToCSVMapping: {
-          SerialNumber: "Device Serial Number",
-          oemManufacturerName: "Manufacturer Name",
-          modelName: "Device Model",
-          productKey: "Windows Product ID",
-          hardwareHash: "Hardware Hash",
-        },
+        fields: [
+          { 
+            friendlyName: "Serialnumber", 
+            propertyName: "SerialNumber",
+            alternativePropertyNames: ["Device Serial Number"]
+          },
+          { 
+            friendlyName: "Manufacturer", 
+            propertyName: "oemManufacturerName",
+            alternativePropertyNames: ["Manufacturer name"]
+          },
+          { 
+            friendlyName: "Model", 
+            propertyName: "modelName",
+            alternativePropertyNames: ["Device model"]
+          },
+          { 
+            friendlyName: "Product ID", 
+            propertyName: "productKey",
+            alternativePropertyNames: ["Windows Product ID"]
+          },
+          { 
+            friendlyName: "Hardware hash", 
+            propertyName: "hardwareHash",
+            alternativePropertyNames: ["Hardware Hash"]
+          }
+        ],
+        fileName: "autopilot-template"
       },
     },
     {
