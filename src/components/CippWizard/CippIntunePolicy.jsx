@@ -89,7 +89,6 @@ export const CippIntunePolicy = (props) => {
             />
           </Grid>
         </CippFormCondition>
-        
         <CippFormCondition
           formControl={formControl}
           field="RAWJson"
