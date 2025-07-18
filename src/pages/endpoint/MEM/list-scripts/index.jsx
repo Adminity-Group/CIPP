@@ -12,7 +12,7 @@ import {
   DialogActions,
 } from "@mui/material";
 import { CippCodeBlock } from "/src/components/CippComponents/CippCodeBlock";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { Close, Save, Book, AddModerator as AddModeratorIcon } from "@mui/icons-material";
 import { useSettings } from "../../../../hooks/use-settings";
@@ -32,6 +32,11 @@ const Page = () => {
   const [currentScript, setCurrentScript] = useState(null);
 
   const dispatch = useDispatch();
+
+  const language = useMemo(() => {
+    return currentScript?.scriptType?.toLowerCase() === ("macos" || "linux") ? "shell" : "powershell";
+  }, [currentScript?.scriptType]);
+
 
   const tenantFilter = useSettings().currentTenant;
   const {
@@ -267,7 +272,7 @@ const Page = () => {
               type="editor"
               code={codeContent}
               onChange={codeChange}
-              language="powershell"
+              language={language}
             />
           )}
         </DialogContent>
