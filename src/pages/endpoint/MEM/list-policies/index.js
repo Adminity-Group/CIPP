@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { GlobeAltIcon, TrashIcon, UserIcon } from "@heroicons/react/24/outline";
 import { PermissionButton } from "/src/utils/permissions.js";
 import { CippPolicyDeployDrawer } from "/src/components/CippComponents/CippPolicyDeployDrawer.jsx";
+import Link from "next/link";
 
 const Page = () => {
   const pageTitle = "Configuration Policies";
