@@ -437,7 +437,7 @@ function CippJsonView({
       "createdDateTime",
       "modifiedDateTime",
     ];
-    const cleanedObj = cleanObject(object);
+    const cleanedObj = cleanObject(object) || {};
     const filteredObj = Object.fromEntries(
       Object.entries(cleanedObj).filter(([key]) => !blacklist.includes(key))
     );

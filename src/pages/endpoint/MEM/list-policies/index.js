@@ -4,7 +4,7 @@ import { Book, LaptopChromebook, RocketLaunch, AddModerator as AddModeratorIcon 
 import { Button } from "@mui/material";
 import { GlobeAltIcon, TrashIcon, UserIcon } from "@heroicons/react/24/outline";
 import { PermissionButton } from "/src/utils/permissions.js";
-import Link from "next/link";
+import { CippPolicyDeployDrawer } from "/src/components/CippComponents/CippPolicyDeployDrawer.jsx";
 
 const Page = () => {
   const pageTitle = "Configuration Policies";
@@ -114,14 +114,11 @@ const Page = () => {
       offCanvas={offCanvas}
       simpleColumns={simpleColumns}
       cardButton={
-        <PermissionButton
+        <CippPolicyDeployDrawer
+          buttonText="Deploy Policy"
           requiredPermissions={cardButtonPermissions}
-          component={Link}
-          href="/endpoint/MEM/add-policy"
-          startIcon={<RocketLaunch />}
-        >
-          Deploy Policy
-        </PermissionButton>
+          PermissionButton={PermissionButton}
+        />
       }
     />
   );
