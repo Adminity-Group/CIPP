@@ -31,7 +31,6 @@ export const nativeMenuItems = [
     items: [
       {
         title: "Administration",
-        path: "/identity/administration",
         permissions: ["Identity.User.*"],
         items: [
           {
@@ -83,7 +82,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Reports",
-        path: "/identity/reports",
         permissions: [
           "Identity.User.*",
           "Identity.Group.*",
@@ -133,7 +131,6 @@ export const nativeMenuItems = [
     items: [
       {
         title: "Administration",
-        path: "/tenant/administration",
         permissions: ["Tenant.Administration.*"],
         items: [
           {
@@ -180,12 +177,11 @@ export const nativeMenuItems = [
       },
       {
         title: "GDAP Management",
-        path: "/tenant/gdap-management/",
+        path: "/tenant/gdap-management",
         permissions: ["Tenant.Relationship.*"],
       },
       {
         title: "Standards & Drift",
-        path: "/tenant/standards",
         permissions: [
           "Tenant.Standards.*",
           "Tenant.BestPracticeAnalyser.*",
@@ -211,7 +207,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Conditional Access",
-        path: "/tenant/conditional",
         permissions: ["Tenant.ConditionalAccess.*"],
         items: [
           {
@@ -238,7 +233,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Reports",
-        path: "/tenant/reports",
         permissions: ["Tenant.Administration.*", "Scheduler.Billing.*", "Tenant.Application.*"],
         items: [
           {
@@ -257,6 +251,11 @@ export const nativeMenuItems = [
             permissions: ["Tenant.Application.*"],
           },
         ],
+      },
+      {
+        title: "Manage Tenant",
+        path: "/tenant/manage/edit",
+        permissions: ["Tenant.Administration.*"],
       },
     ],
   },
@@ -277,7 +276,6 @@ export const nativeMenuItems = [
     items: [
       {
         title: "Incidents & Alerts",
-        path: "/security/incidents",
         permissions: ["Security.Incident.*"],
         items: [
           {
@@ -304,7 +302,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Defender",
-        path: "/security/defender",
         permissions: ["Security.Alert.*"],
         items: [
           {
@@ -326,7 +323,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Reports",
-        path: "/security/reports",
         permissions: ["Tenant.DeviceCompliance.*"],
         items: [
           {
@@ -338,7 +334,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Safe Links",
-        path: "/security/safelinks",
         permissions: ["Security.SafeLinksPolicy.*"],
         items: [
           {
@@ -373,7 +368,6 @@ export const nativeMenuItems = [
     items: [
       {
         title: "Applications",
-        path: "/endpoint/applications",
         permissions: ["Endpoint.Application.*"],
         items: [
           {
@@ -390,7 +384,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Autopilot",
-        path: "/endpoint/autopilot",
         permissions: ["Endpoint.Autopilot.*"],
         items: [
           {
@@ -417,7 +410,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Device Management",
-        path: "/endpoint/MEM",
         permissions: ["Endpoint.MEM.*"],
         items: [
           {
@@ -469,7 +461,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Reports",
-        path: "/endpoint/reports",
         permissions: ["Endpoint.Device.*", "Endpoint.Autopilot.*"],
         items: [
           {
@@ -519,7 +510,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Teams",
-        path: "/teams-share/teams",
         permissions: ["Teams.Group.*"],
         items: [
           {
@@ -565,7 +555,6 @@ export const nativeMenuItems = [
     items: [
       {
         title: "Administration",
-        path: "/email/administration",
         permissions: ["Exchange.Mailbox.*"],
         items: [
           {
@@ -617,7 +606,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Transport",
-        path: "/email/transport",
         permissions: ["Exchange.TransportRule.*"],
         items: [
           {
@@ -644,7 +632,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Spamfilter",
-        path: "/email/spamfilter",
         permissions: ["Exchange.SpamFilter.*"],
         items: [
           {
@@ -676,7 +663,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Resource Management",
-        path: "/email/resources/management",
         permissions: ["Exchange.Equipment.*"],
         items: [
           {
@@ -698,7 +684,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Reports",
-        path: "/email/reports",
         permissions: [
           "Exchange.Mailbox.*",
           "Exchange.SpamFilter.*",
@@ -764,11 +749,11 @@ export const nativeMenuItems = [
       "Tenant.Application.*",
       "Tenant.DomainAnalyser.*",
       "Exchange.Mailbox.*",
+      "CIPP.Scheduler.*",
     ],
     items: [
       {
         title: "Tenant Tools",
-        path: "/tenant/tools",
         permissions: ["Tenant.Administration.*"],
         items: [
           {
@@ -802,7 +787,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Email Tools",
-        path: "/email/tools",
         permissions: ["Exchange.Mailbox.*"],
         items: [
           {
@@ -824,7 +808,6 @@ export const nativeMenuItems = [
       },
       {
         title: "Dark Web Tools",
-        path: "/tools/darkweb",
         permissions: ["CIPP.Core.*"],
         items: [
           {
