@@ -1,7 +1,6 @@
 import { Layout as DashboardLayout } from "/src/layouts/index.js";
 import { CippTablePage } from "/src/components/CippComponents/CippTablePage.jsx";
-import { Book, LaptopChromebook, RocketLaunch, AddModerator as AddModeratorIcon } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Book, LaptopChromebook } from "@mui/icons-material";
 import { GlobeAltIcon, TrashIcon, UserIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import { PermissionButton } from "/src/utils/permissions.js";
 import { CippPolicyDeployDrawer } from "/src/components/CippComponents/CippPolicyDeployDrawer.jsx";
@@ -16,7 +15,6 @@ const assignmentFilterTypeOptions = [
   { label: "Include - Apply policy to devices matching filter", value: "include" },
   { label: "Exclude - Apply policy to devices NOT matching filter", value: "exclude" },
 ];
-import Link from "next/link";
 
 const Page = () => {
   const pageTitle = "App Protection & Configuration Policies";
@@ -231,17 +229,6 @@ const Page = () => {
 
   return (
     <CippTablePage
-      cardButton={
-        <>
-          <Button
-            component={Link}
-            href="/endpoint/MEM/add-policy"
-            startIcon={<AddModeratorIcon />}
-          >
-            Deploy Intune Policy
-          </Button>
-        </>
-      }
       title={pageTitle}
       apiUrl="/api/ListAppProtectionPolicies"
       actions={actions}
