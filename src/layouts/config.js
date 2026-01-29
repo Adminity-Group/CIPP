@@ -895,7 +895,7 @@ export const nativeMenuItems = [
         title: "Setup Wizard",
         path: "/onboardingv2",
         roles: ["admin", "superadmin"],
-        permissions: ["CIPP.Core.*"],
+        permissions: ["CIPP.AppSettings.*"],
       },
       {
         title: "Integrations",
@@ -907,7 +907,7 @@ export const nativeMenuItems = [
         title: "Custom Data",
         path: "/cipp/custom-data/directory-extensions",
         roles: ["admin", "superadmin"],
-        permissions: ["CIPP.Core.*"],
+        permissions: ["CIPP.AppSettings.*"],
       },
       {
         title: "Advanced",
