@@ -31,7 +31,7 @@
     },
     {
       "route": "/login",
-      "rewrite": "/.auth/login/aad"
+      "redirect": "/.auth/login/aad?prompt=select_account"
     },
     {
       "route": "/.auth/login/twitter",
@@ -81,7 +81,7 @@
   },
   "responseOverrides": {
     "401": {
-      "redirect": "/.auth/login/aad?post_login_redirect_uri=.referrer",
+      "redirect": "/.auth/login/aad?prompt=select_account&post_login_redirect_uri=.referrer",
       "statusCode": 302,
       "exclude": ["/assets/illustrations/*.{png,jpg,gif}", "/css/*"]
     },

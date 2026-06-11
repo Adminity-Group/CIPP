@@ -24,6 +24,7 @@ import { Close, Save, LaptopChromebook, Book, AddModerator as AddModeratorIcon }
 import { useSettings } from "../../../../hooks/use-settings";
 import { Stack } from "@mui/system";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useCippReportDB } from "../../../../components/CippComponents/CippReportDBControls";
 
 import Link from "next/link";
 
@@ -41,6 +42,17 @@ const Page = () => {
   const [codeContentChanged, setCodeContentChanged] = useState(false);
   const [warnOpen, setWarnOpen] = useState(false);
   const [currentScript, setCurrentScript] = useState(null);
+  const [scriptTenant, setScriptTenant] = useState(null);
+
+  const tenantFilter = useSettings().currentTenant;
+  const reportDB = useCippReportDB({
+    apiUrl: "/api/ListIntuneScript",
+    queryKey: "ListIntuneScript",
+    cacheName: "IntuneScripts",
+    syncTitle: "Sync Intune Scripts Report",
+    allowToggle: true,
+    defaultCached: false,
+  });
 
   const dispatch = useDispatch();
 
@@ -50,17 +62,16 @@ const Page = () => {
       : "powershell";
   }, [currentScript?.scriptType]);
 
-  const tenantFilter = useSettings().currentTenant;
   const {
     isLoading: scriptIsLoading,
     isRefetching: scriptIsFetching,
     refetch: scriptRefetch,
     data,
   } = useQuery({
-    queryKey: ["script", { scriptId }],
+    queryKey: ["script", { scriptId, scriptTenant }],
     queryFn: async () => {
       const response = await fetch(
-        `/api/EditIntuneScript?TenantFilter=${tenantFilter}&ScriptId=${scriptId}`
+        `/api/EditIntuneScript?TenantFilter=${scriptTenant || tenantFilter}&ScriptId=${scriptId}`
       );
       return response.json();
     },
@@ -81,6 +92,7 @@ const Page = () => {
 
   const handleScriptEdit = async (row, action) => {
     setScriptId(row.id);
+    setScriptTenant(row?.Tenant || tenantFilter);
     setCodeOpen(!codeOpen);
   };
 
@@ -96,6 +108,7 @@ const Page = () => {
       setCodeOpen(!codeOpen);
       setCodeContentChanged(false);
       setScriptId(null);
+      setScriptTenant(null);
       setCodeContent("");
     }
   };
@@ -116,7 +129,7 @@ const Page = () => {
         scriptType,
       } = currentScript;
       const patchData = {
-        TenantFilter: tenantFilter,
+        TenantFilter: scriptTenant || tenantFilter,
         ScriptId: id,
         ScriptType: scriptType,
         IntuneScript: JSON.stringify({
@@ -212,7 +225,7 @@ const Page = () => {
       ],
       confirmText: 'Are you sure you want to assign "[displayName]" to all users?',
       customDataformatter: (row, action, formData) => ({
-        tenantFilter: tenantFilter,
+        tenantFilter: tenantFilter === "AllTenants" && row?.Tenant ? row.Tenant : tenantFilter,
         ID: row?.id,
         Type: getScriptEndpoint(row?.scriptType),
         AssignTo: "allLicensedUsers",
@@ -238,7 +251,7 @@ const Page = () => {
       ],
       confirmText: 'Are you sure you want to assign "[displayName]" to all devices?',
       customDataformatter: (row, action, formData) => ({
-        tenantFilter: tenantFilter,
+        tenantFilter: tenantFilter === "AllTenants" && row?.Tenant ? row.Tenant : tenantFilter,
         ID: row?.id,
         Type: getScriptEndpoint(row?.scriptType),
         AssignTo: "AllDevices",
@@ -264,7 +277,7 @@ const Page = () => {
       ],
       confirmText: 'Are you sure you want to assign "[displayName]" to all users and devices?',
       customDataformatter: (row, action, formData) => ({
-        tenantFilter: tenantFilter,
+        tenantFilter: tenantFilter === "AllTenants" && row?.Tenant ? row.Tenant : tenantFilter,
         ID: row?.id,
         Type: getScriptEndpoint(row?.scriptType),
         AssignTo: "AllDevicesAndUsers",
@@ -320,7 +333,7 @@ const Page = () => {
       customDataformatter: (row, action, formData) => {
         const selectedGroups = Array.isArray(formData?.groupTargets) ? formData.groupTargets : [];
         return {
-          tenantFilter: tenantFilter,
+          tenantFilter: tenantFilter === "AllTenants" && row?.Tenant ? row.Tenant : tenantFilter,
           ID: row?.id,
           Type: getScriptEndpoint(row?.scriptType),
           GroupIds: selectedGroups.map((group) => group.value).filter(Boolean),
@@ -369,6 +382,7 @@ const Page = () => {
   };
 
   const simpleColumns = [
+    ...reportDB.cacheColumns,
     "scriptType",
     "displayName",
     "fileName",
@@ -394,10 +408,12 @@ const Page = () => {
           </>
         }
         title={pageTitle}
-        apiUrl="/api/ListIntuneScript"
+        apiUrl={reportDB.resolvedApiUrl}
+        queryKey={reportDB.resolvedQueryKey}
         actions={actions}
         offCanvas={offCanvas}
         simpleColumns={simpleColumns}
+        cardButton={reportDB.controls}
       />
 
       <Dialog open={codeOpen} maxWidth="lg" fullWidth>
@@ -454,6 +470,7 @@ const Page = () => {
               setWarnOpen(false);
               setCodeContent("");
               setScriptId(null);
+              setScriptTenant(null);
               setCodeContentChanged(false);
             }}
           >
@@ -461,9 +478,10 @@ const Page = () => {
           </Button>
         </DialogActions>
       </Dialog>
+      {reportDB.syncDialog}
     </>
   );
 };
 
-Page.getLayout = (page) => <DashboardLayout allTenantsSupport={false}>{page}</DashboardLayout>;
+Page.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 export default Page;
